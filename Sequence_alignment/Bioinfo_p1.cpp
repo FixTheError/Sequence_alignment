@@ -69,12 +69,14 @@ void read_seq_files(string file1, string file2) {
 		seq2 = temp;
 	}
 
+	//Create a 2D array for substitution scores.
 	Sub_scores = new int*[ seq1.length() + 1];
 	for (int i = 0; i < (seq1.length() + 1); i++) {
 		Sub_scores[i] = new int[seq2.length() + 1];
 	}
 }
 
+//Find the substitution score.
 int find_s_val(int i, int j) {
 	int si1;
 	int si2;
