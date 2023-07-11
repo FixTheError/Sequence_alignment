@@ -10,6 +10,7 @@
 
 using namespace std;
 
+//Set up all variables and pointers.
 ifstream s1;
 ifstream s2;
 string ns1;
@@ -26,6 +27,8 @@ int lf;
 int sgf;
 int Ai;
 int Aj;
+
+//Amino acid frequencies.
 double AA_freq[] = { 0.08768333990119, 0.0405129182960021, 0.0408784631518651,
 		0.0477160345974603, 0.0324709539656211, 0.0378461268859548, 0.0504933695605074,
 		0.0898249006830963, 0.0328588505954496, 0.0357514442352249, 0.0852464099207531,
@@ -33,7 +36,7 @@ double AA_freq[] = { 0.08768333990119, 0.0405129182960021, 0.0408784631518651,
 		0.0697549720598532, 0.0583275704247605, 0.00931264523877659, 0.0317154088087089,
 		0.0630397292098708 };
 
-//Read the input files
+//Read the amino acid sequences from the input rfiles.
 void read_seq_files(string file1, string file2) {
 	string bufr;
 
@@ -59,7 +62,7 @@ void read_seq_files(string file1, string file2) {
 	while (getline(s2, bufr)) {
 		seq2.append(bufr);
 	}
-	//ensure longest sequence is row length
+	//ensure longest sequence is stored as seq_1
 	if (seq1.length() > seq2.length()) {
 		string temp = seq1;
 		seq1 = seq2;
